@@ -1,5 +1,5 @@
 # Ex.No: 1  Implementation of Breadth First Search 
-### DATE:                                                                            
+### DATE:  11/3/2025                                                                          
 ### REGISTER NUMBER : 212222220044
 ### AIM: 
 To write a python program to implement Breadth first Search. 
@@ -14,34 +14,42 @@ To write a python program to implement Breadth first Search.
 8.   Stop the program.
 ### Program:
 ```
-#breadth first Search in python 
-graph = {
- '5' : ['3','7'],
- '3' : ['2', '4'],
- '7' : ['8'],
- '2' : [],
- '4' : ['8'],
- '8' : []
- }
- visited = [] # List for visited nodes.
- queue = []     #Initialize a queue
- def bfs(visited, graph, node): #function for BFS
- 	 visited.append(node)
-  	queue.append(node)
-  		while queue:          # Creating loop to visit each node
-    			m = queue.pop(0) 
-    			print (m) 
-    			for neighbour in graph[m]:
-      				if neighbour not in visited:
-        					visited.append(neighbour)
-       					 queue.append(neighbour)
+# Python program to implement Breadth-First Search
 
-# Driver Code
-print("Following is the Breadth-First Search")
-bfs(visited, graph, '5')    # function calling
+def bfs(graph, start_node):
+    visited = set()  # Set to keep track of visited nodes
+    queue = []  # Queue to maintain nodes to visit
+    
+    visited.add(start_node)
+    queue.append(start_node)
+    
+    while queue:
+        node = queue.pop(0)  # Dequeue a node
+        print(node, end=" ")  # Process the node
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+# Example graph represented as an adjacency list
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F', 'G'],
+    'D': ['B'],
+    'E': ['B', 'H'],
+    'F': ['C'],
+    'G': ['C'],
+    'H': ['E']
+}
+
+# Call BFS function
+print("Breadth-First Search starting from node A:")
+bfs(graph, 'A')
 ```
 ### Output:
-![Screenshot 2025-03-07 151607](https://github.com/user-attachments/assets/1514c0ed-b271-4ef1-9025-7b2c2d71294d)
+![ai exp1](https://github.com/user-attachments/assets/2639d9bc-1277-4b2d-88e4-81514167e103)
 
 
 ### Result:
