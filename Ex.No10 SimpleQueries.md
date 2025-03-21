@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 21-03-2025                                                                       
+### REGISTER NUMBER : 212222220044
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -46,8 +46,19 @@ Convert the facts in predicate form to clauses and then prove by resolution: “
 
 ### Program:
 
+```
+likes(steve,X):-
+    easycourse(X).
+hard(sciencecourse).
+easycourse(X):-
+    course(X,dept(havefun)).
+course(bk301,dept(havefun)).
+```
 
 ### Output:
+
+![image](https://github.com/user-attachments/assets/650748c4-a1ab-4b29-a961-5c32baf3253e)
+
 
 ### Task 3:
 Consider the statement <br> 
@@ -55,8 +66,23 @@ Consider the statement <br>
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
 
+```
+crime(X):-american(X),
+    weapon(Y),
+    hostile(Z),
+    sells(X,Y,Z).
+weapon(Y):-missile(Y).
+hostile(Z):-enemy(Z,X).
+sells(west,Y,nano):-missile(Y),owns(nano,Y).
+missile(m).
+owns(nano,m).
+enemy(nano,american).
+american(west).
+```
 
 ### Output:
+
+![image](https://github.com/user-attachments/assets/30535711-ff15-4ed3-801c-02c6aad05eaa)
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
